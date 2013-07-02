@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+<title>TicTacToe</title>
+<link rel="stylesheet" type="text/css" href="TicTacToe.css">
+</head>
+<body>
+<script src="TicTacToe.js" type="text/javascript"></script>
+<h1><span id="tic">Tic</span> Tac <span id="toe">Toe</span></h1>
+
+
+<div id="content"><center>
+
+<label>Computer plays:
+<select id="selectComputer">
+  <option value=1>X</option>
+	<option value=0>O</option>
+	<option value=2 selected>None</option>
+</select>
+<hr>
+
+
+<label>X:</label>
+<select id="selectXcolor">
+	<option value="red" selected>Red</option>
+	<option value="blue">Blue</option>
+	<option value="green">Green</option>
+	<option value="yellow">Yellow</option>
+	<option value="black">Black</option>
+	<option value="white">White (LOL!)</option>
+	<option value="orange">Orange</option>
+	<option value="pink">Pink</option>
+	<option value="purple">Purple</option>
+	<option value="brown">Brown</option>
+</select>
+
+
+
+<label>O:</label>
+<select id="selectOcolor">
+	<option value="red">Red</option>
+	<option value="blue" selected>Blue</option>
+	<option value="green">Green</option>
+	<option value="yellow">Yellow</option>
+	<option value="black">Black</option>
+	<option value="white">White (LOL!)</option>
+	<option value="orange">Orange</option>
+	<option value="pink">Pink</option>
+	<option value="purple">Purple</option>
+	<option value="brown">Brown</option>
+</select>
+
+<hr>
+
+<table border="2px">
+	<tr>
+		<td id="s1" onClick="clickSquare(s1)"></td>
+		<td id="s2" onClick="clickSquare(s2)"></td>
+		<td id="s3" onClick="clickSquare(s3)"></td>
+	</tr>
+	<tr>
+		<td id="s4" onClick="clickSquare(s4)"></td>
+		<td id="s5" onClick="clickSquare(s5)"></td>
+		<td id="s6" onClick="clickSquare(s6)"></td>
+	</tr>
+	<tr>
+		<td id="s7" onClick="clickSquare(s7)"></td>
+		<td id="s8" onClick="clickSquare(s8)"></td>
+		<td id="s9" onClick="clickSquare(s9)"></td>
+	</tr>
+</table>
+
+<hr>
+
+<input id="computerTurn" type="submit" onClick="algorithmO()" value="Computer Turn">
+<input id="button" type="submit" value="Clear Board" onClick="clearAll()">
+</center>
+</div>
+
+
+
+<div id="wrapper">
+<div id="instructions">
+<b>Instructions:</b> Tic Tac Toe is a game for two players: X & O. 
+The players take turns placing their symbol (X or O) on a 3x3 board. 
+The objective of each player is to have 3 of his symbols on the board in a row, column or diagonal. 
+My game can be played either <i>player vs. player</i> or <i>player vs. computer</i>.
+</div>
+<hr>
+<div id="myGame">
+<b>My Algorithm:</b>This tells how the computer will play in certain situations. If an option is not available, the computer will try the one below it.<br>
+<ul>
+	<li>if this is the first turn & computer is X, plays in a corner (*best opening move)</li>
+
+	<li>if this is the second turn & computer is O, plays in the center (*best second move)</li>
+
+	<li>if possible, wins</li>
+
+	<li>if possible, blocks opponent's win</li>
+
+	<li>if possible, makes a fork</li>
+
+	<li>if possible (without losing next turn), blocks an opponent's fork</li>
+
+	<li>if none of these is possible, makes a random move</li>
+</ul>
+</div>
+<hr>
+<div id="note">
+<b>Note:</b> The game is still under development. I apologize for any bug/problem in the game. <i>Version 2.7.1 <!--fake version--></i>
+</div>
+</div>
+
+
+</body>
+</html>
